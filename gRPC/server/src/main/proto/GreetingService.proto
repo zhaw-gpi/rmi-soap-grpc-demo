@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package ch.zhaw.gpi;
+
+message GreetingServiceRequest {
+    string message = 1;
+}
+
+message GreetingServiceResponse {
+    string greeting = 1;
+}
+
+service Greeter {
+    rpc getGreetingWithDateRequest ( GreetingServiceRequest) returns (GreetingServiceResponse) {}
+}

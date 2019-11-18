@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.zhaw.ch/gpi/greetings"
+           targetNamespace="http://www.zhaw.ch/gpi/greetings" elementFormDefault="qualified">
+ 
+    <xs:element name="getGreetingWithDateRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+ 
+    <xs:element name="getGreetingWithDateResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="greeting" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

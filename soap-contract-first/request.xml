@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://www.zhaw.ch/gpi/greetings">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getGreetingWithDateRequest>
+            <gs:message>Hallo</gs:message>
+        </gs:getGreetingWithDateRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
