@@ -1,7 +1,8 @@
 **/target
 **/.classpath
 **/.project
-**/.xjb
+**/*.xjb
+**/.lck
 **/.settings
 **/.vscode
 **/.DS_Store
