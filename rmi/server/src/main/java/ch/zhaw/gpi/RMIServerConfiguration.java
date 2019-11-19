@@ -8,7 +8,7 @@ import org.springframework.remoting.support.RemoteExporter;
 @Configuration
 public class RMIServerConfiguration {
     @Bean
-    GreetingService dateService() {
+    GreetingService greetingService() {
         return new GreetingServiceImpl();
     }
 

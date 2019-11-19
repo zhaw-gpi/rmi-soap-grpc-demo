@@ -18,7 +18,7 @@ public class SOAPClient implements CommandLineRunner {
   }
   
   @Bean
-	public GreetingClient countryClient(Jaxb2Marshaller marshaller) {
+	public GreetingClient cgreetingClient(Jaxb2Marshaller marshaller) {
 		GreetingClient client = new GreetingClient();
 		client.setDefaultUri("http://localhost:8080/ws");
 		client.setMarshaller(marshaller);

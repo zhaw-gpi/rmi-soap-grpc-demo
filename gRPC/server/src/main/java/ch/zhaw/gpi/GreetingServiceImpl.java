@@ -15,10 +15,12 @@ public class GreetingServiceImpl extends GreeterImplBase {
     public void getGreetingWithDateRequest(GreetingServiceRequest request,
             StreamObserver<GreetingServiceResponse> responseObserver) {
 
-                String greeting = "You entered: " + request.getMessage() + " on " + new Date(System.currentTimeMillis());
+                String greeting = "You entered: " + request.getMessage() + " on " 
+                    + new Date(System.currentTimeMillis());
 
                 Builder replyBuilder =  GreetingServiceResponse.newBuilder().setGreeting(greeting);
                 responseObserver.onNext(replyBuilder.build());
-                responseObserver.onCompleted();    }
-    
+                responseObserver.onCompleted();    
+    }   
 }
+
