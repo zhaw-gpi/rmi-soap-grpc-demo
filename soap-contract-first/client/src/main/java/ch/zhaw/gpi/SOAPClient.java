@@ -4,12 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @SpringBootApplication
 public class SOAPClient implements CommandLineRunner {
 
+
+  @Autowired
+  private ApplicationContext context;
+  
   @Bean
 	public Jaxb2Marshaller marshaller() {
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
@@ -26,15 +31,13 @@ public class SOAPClient implements CommandLineRunner {
 		return client;
 	}
 
-  @Autowired
-  private GreetingClient greetingClient;
-
   public static void main(String[] args) {
     SpringApplication.run(SOAPClient.class, args);
   }
 
   @Override
   public void run(String... args) throws Exception {
+    GreetingClient greetingClient = context.getBean(GreetingClient.class);
     String greeting = greetingClient.getGreetingWithDate("Hello SOAP!").getGreeting();
     System.out.println(greeting);
   }
